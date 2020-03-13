@@ -19,6 +19,7 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
+	log.Printf("access: %+v\n", r)
 	resp := response{Message: os.Getenv("MESSAGE")}
 	j, err := json.Marshal(resp)
 	if err != nil {
